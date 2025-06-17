@@ -4,3 +4,7 @@ pandas
 matplotlib
 seaborn
 scikit-learn
+pymongo
+certifi
+
+# -e .
