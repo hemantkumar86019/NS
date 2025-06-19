@@ -8,6 +8,7 @@ pymongo
 certifi
 pymongo[srv]==3.11
 dill
+mlflow
 pyaml
 
 # -e .
