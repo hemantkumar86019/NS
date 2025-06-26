@@ -19,6 +19,9 @@ from networksecurity.utils.ml_utils.model.estimator import NetworkModel
 
 import mlflow
 
+# import dagshub
+# dagshub.init(repo_owner='hemantkumar86019', repo_name='NS', mlflow=True)
+
 
 
 class ModelTrainer:
@@ -117,6 +120,9 @@ class ModelTrainer:
         network_model = NetworkModel(preprocessor = preprocessor, model = best_model)
         save_object(self.model_trainer_config.trained_model_file_path, obj = network_model)
 
+        ## saving file in final_models
+        save_object('final_models/model.pkl', best_model)
+
         ## Model Trainer Artifact
         model_trainer_artifact = ModelTrainerArtifact(
             trained_model_file_path = self.model_trainer_config.trained_model_file_path,
@@ -150,4 +156,4 @@ class ModelTrainer:
             return model_trainer_artifact
 
         except Exception as e:
-            raise NetworkSecurityException(e, sys)     
+            raise NetworkSecurityException(e, sys)

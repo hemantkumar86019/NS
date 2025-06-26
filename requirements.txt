@@ -10,5 +10,9 @@ pymongo[srv]==3.11
 dill
 mlflow
 pyaml
+dagshub
+fastapi
+uvicorn
+python-multipart
 
 # -e .
